@@ -1,0 +1,21 @@
+# Windsurf IDE files
+Windsurf.exe
+Windsurf.VisualElementsManifest.xml
+*.dll
+*.pak
+*.dat
+*.bin
+*.exe
+icudtl.dat
+snapshot_blob.bin
+v8_context_snapshot.bin
+LICENSES.chromium.html
+unins000.*
+
+# IDE directories
+appx/
+bin/
+locales/
+policies/
+resources/
+tools/
