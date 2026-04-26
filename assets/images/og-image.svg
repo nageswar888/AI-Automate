@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <circle cx="1000" cy="150" r="300" fill="url(#accentGrad)" opacity="0.1"/>
+  <circle cx="200" cy="500" r="200" fill="url(#accentGrad)" opacity="0.05"/>
+  <text x="600" y="280" font-size="80" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-weight="800">AI</text>
+  <text x="600" y="360" font-size="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="600">Automate</text>
+  <text x="600" y="450" font-size="28" text-anchor="middle" fill="#a1a1aa" font-family="Arial, sans-serif">AI-Powered Platform to Automate Your Business</text>
+  <rect x="480" y="500" width="240" height="4" fill="url(#accentGrad)"/>
+</svg>

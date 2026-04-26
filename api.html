@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>API Reference - AIAutomate</title>
+    <meta name="description" content="AIAutomate API documentation. Integrate with our REST API to build powerful automations.">
+    <meta name="author" content="AIAutomate">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Reference - AIAutomate">
+    <meta property="og:description" content="AIAutomate API documentation and integration guide.">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        .code-block {
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            color: var(--text-primary);
+        }
+        .endpoint {
+            background: var(--bg-card);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        .method {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        .method.get { background: #22c55e; color: white; }
+        .method.post { background: #3b82f6; color: white; }
+        .method.put { background: #f59e0b; color: white; }
+        .method.delete { background: #ef4444; color: white; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">AI</span>Automate
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn btn-outline-light">Login</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="pricing.html" class="btn btn-primary-gradient">Get Started Free</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- API Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="section-label">Resources</span>
+                    <h1 class="hero-title">API <span class="gradient-text">Reference</span></h1>
+                    <p class="hero-subtitle">
+                        Build powerful integrations with our REST API. Automate workflows programmatically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Content -->
+    <section class="py-5" style="background: var(--bg-primary);">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 mb-4" data-aos="fade-right">
+                    <div style="background: var(--bg-card); border-radius: 1rem; padding: 1.5rem; position: sticky; top: 100px;">
+                        <h5 style="color: var(--text-primary); margin-bottom: 1rem; font-weight: 600;">Quick Links</h5>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="#authentication" style="color: var(--text-secondary); text-decoration: none;">Authentication</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#workflows" style="color: var(--text-secondary); text-decoration: none;">Workflows</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#tasks" style="color: var(--text-secondary); text-decoration: none;">Tasks</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#integrations" style="color: var(--text-secondary); text-decoration: none;">Integrations</a></li>
+                            <li><a href="#webhooks" style="color: var(--text-secondary); text-decoration: none;">Webhooks</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-9" data-aos="fade-up">
+                    <div style="background: var(--bg-card); border-radius: 1rem; padding: 2rem; color: var(--text-secondary); line-height: 1.8;">
+                        
+                        <!-- Authentication -->
+                        <div id="authentication" style="margin-bottom: 3rem;">
+                            <h2 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.75rem;">Authentication</h2>
+                            <p style="margin-bottom: 1.5rem;">
+                                All API requests must include an API key in the Authorization header. You can generate API keys from your dashboard settings.
+                            </p>
+                            <div class="code-block">
+Authorization: Bearer YOUR_API_KEY
+                            </div>
+                            <p style="margin-top: 1rem; font-size: 0.875rem;">
+                                Base URL: <code style="background: var(--bg-primary); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">https://api.aiautomate.com/v1</code>
+                            </p>
+                        </div>
+
+                        <!-- Workflows -->
+                        <div id="workflows" style="margin-bottom: 3rem;">
+                            <h2 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.75rem;">Workflows</h2>
+                            
+                            <div class="endpoint">
+                                <span class="method get">GET</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/workflows</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">List all workflows</p>
+                            </div>
+
+                            <div class="endpoint">
+                                <span class="method post">POST</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/workflows</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Create a new workflow</p>
+                                <div class="code-block" style="margin-top: 1rem;">
+{
+  "name": "My Workflow",
+  "description": "Automate email notifications",
+  "trigger": {
+    "type": "webhook",
+    "config": {}
+  },
+  "actions": [...]
+}
+                                </div>
+                            </div>
+
+                            <div class="endpoint">
+                                <span class="method get">GET</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/workflows/{id}</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Get a specific workflow</p>
+                            </div>
+
+                            <div class="endpoint">
+                                <span class="method put">PUT</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/workflows/{id}</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Update a workflow</p>
+                            </div>
+
+                            <div class="endpoint">
+                                <span class="method delete">DELETE</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/workflows/{id}</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Delete a workflow</p>
+                            </div>
+                        </div>
+
+                        <!-- Tasks -->
+                        <div id="tasks" style="margin-bottom: 3rem;">
+                            <h2 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.75rem;">Tasks</h2>
+                            
+                            <div class="endpoint">
+                                <span class="method get">GET</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/tasks</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">List all tasks</p>
+                            </div>
+
+                            <div class="endpoint">
+                                <span class="method get">GET</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/tasks/{id}</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Get task details</p>
+                            </div>
+                        </div>
+
+                        <!-- Webhooks -->
+                        <div id="webhooks">
+                            <h2 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.75rem;">Webhooks</h2>
+                            <p style="margin-bottom: 1.5rem;">
+                                Webhooks allow you to receive real-time notifications when events occur in your account.
+                            </p>
+                            
+                            <div class="endpoint">
+                                <span class="method post">POST</span>
+                                <span style="color: var(--text-primary); font-weight: 500;">/webhooks</span>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem;">Register a webhook</p>
+                                <div class="code-block" style="margin-top: 1rem;">
+{
+  "url": "https://your-app.com/webhook",
+  "events": ["workflow.completed", "task.failed"],
+  "secret": "your_webhook_secret"
+}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <span class="brand-text">AI</span>Automate
+                    </div>
+                    <p class="footer-description">
+                        AI-powered automation platform to help businesses boost productivity, reduce costs, and scale faster.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Product</h5>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="api.html" class="active">API Reference</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 AIAutomate. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
