@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Demos - AIAutomate | Multiple Homepage Variations</title>
+    <meta name="description" content="Explore AIAutomate demo variations - AI SaaS, Agency, and Startup homepage designs. Choose the perfect layout for your business.">
+    <meta name="keywords" content="AI SaaS demo, agency template, startup website, homepage variations">
+    <meta name="author" content="AIAutomate">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Demos - AIAutomate">
+    <meta property="og:description" content="Multiple homepage variations for every business type.">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Base & Utilities -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <!-- Components -->
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/cards.css">
+    <link rel="stylesheet" href="assets/css/components/forms.css">
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <!-- Theme & Overrides -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .demo-hero {
+            padding: 140px 0 80px;
+            background: var(--bg-primary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            right: -50%;
+            bottom: -50%;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .demo-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.25);
+        }
+        
+        .demo-card-image {
+            height: 240px;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            transition: opacity 0.3s ease;
+        }
+        
+        .demo-card:hover .demo-card-image::after {
+            opacity: 0.5;
+        }
+        
+        .demo-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .demo-card-content {
+            padding: 28px;
+        }
+        
+        .demo-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .demo-card-description {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: 24px;
+        }
+        
+        .demo-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .demo-feature-tag {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .demo-preview-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .demo-preview-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .demo-coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .demo-coming-soon .demo-badge {
+            background: var(--text-muted);
+        }
+        
+        .demo-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+            padding: 32px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+        }
+        
+        .demo-stat {
+            text-align: center;
+        }
+        
+        .demo-stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .demo-stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">AI</span>Automate
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-nav" aria-label="Toggle theme">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="login.html" class="btn btn-outline-light">Login</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="pricing.html" class="btn btn-primary-gradient">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Hero -->
+    <section class="demo-hero">
+        <div class="container position-relative">
+            <span class="section-label" data-aos="fade-up">Live Demos</span>
+            <h1 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                Choose Your <span class="gradient-text">Perfect Layout</span>
+            </h1>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Multiple professionally designed homepage variations for different business types.<br>
+                Each demo is fully responsive and ready to use.
+            </p>
+            
+            <div class="demo-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="demo-stat">
+                    <div class="demo-stat-value">7+</div>
+                    <div class="demo-stat-label">Homepage Variations</div>
+                </div>
+                <div class="demo-stat">
+                    <div class="demo-stat-value">20+</div>
+                    <div class="demo-stat-label">Inner Pages</div>
+                </div>
+                <div class="demo-stat">
+                    <div class="demo-stat-value">100+</div>
+                    <div class="demo-stat-label">UI Components</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Variations -->
+    <section class="features-section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="row g-4">
+                <!-- AI SaaS Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="demo-card">
+                        <span class="demo-badge">Popular</span>
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">AI SaaS Dashboard</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">AI SaaS</h3>
+                            <p class="demo-card-description">Perfect for AI-powered software, automation platforms, and SaaS products with dashboard previews.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Dashboard UI</span>
+                                <span class="demo-feature-tag">Analytics</span>
+                                <span class="demo-feature-tag">Charts</span>
+                            </div>
+                            <a href="index.html" class="demo-preview-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                Live Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agency Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="demo-card">
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #06b6d4 0%, #22c55e 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">Creative Agency</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">Agency</h3>
+                            <p class="demo-card-description">Showcase your creative work with portfolio sections, team profiles, and client testimonials.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Portfolio</span>
+                                <span class="demo-feature-tag">Team</span>
+                                <span class="demo-feature-tag">Showcase</span>
+                            </div>
+                            <a href="index.html" class="demo-preview-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                Live Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="demo-card">
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">Startup Launch</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">Startup</h3>
+                            <p class="demo-card-description">Modern layout for tech startups with investor sections, roadmap, and growth metrics.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Modern</span>
+                                <span class="demo-feature-tag">Metrics</span>
+                                <span class="demo-feature-tag">Growth</span>
+                            </div>
+                            <a href="index.html" class="demo-preview-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                Live Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="demo-card demo-coming-soon">
+                        <span class="demo-badge">Coming Soon</span>
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">E-Commerce</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">E-Commerce</h3>
+                            <p class="demo-card-description">Complete online store solution with product catalogs, cart, and checkout functionality.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Products</span>
+                                <span class="demo-feature-tag">Cart</span>
+                                <span class="demo-feature-tag">Checkout</span>
+                            </div>
+                            <button class="demo-preview-btn" disabled style="background: var(--text-muted);">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="demo-card demo-coming-soon">
+                        <span class="demo-badge">Coming Soon</span>
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">Portfolio Gallery</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">Portfolio</h3>
+                            <p class="demo-card-description">Beautiful portfolio showcase for designers, photographers, and creative professionals.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Gallery</span>
+                                <span class="demo-feature-tag">Projects</span>
+                                <span class="demo-feature-tag">Creative</span>
+                            </div>
+                            <button class="demo-preview-btn" disabled style="background: var(--text-muted);">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Landing Demo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="demo-card demo-coming-soon">
+                        <span class="demo-badge">Coming Soon</span>
+                        <div class="demo-card-image" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                                <p style="color: white; margin-top: 12px; font-weight: 600;">Mobile App</p>
+                            </div>
+                        </div>
+                        <div class="demo-card-content">
+                            <h3 class="demo-card-title">App Landing</h3>
+                            <p class="demo-card-description">Mobile-first landing page for app launches with device mockups and download CTAs.</p>
+                            <div class="demo-features">
+                                <span class="demo-feature-tag">Mobile</span>
+                                <span class="demo-feature-tag">Download</span>
+                                <span class="demo-feature-tag">Features</span>
+                            </div>
+                            <button class="demo-preview-btn" disabled style="background: var(--text-muted);">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box" data-aos="fade-up">
+                <div class="text-center">
+                    <h2 style="margin-bottom: 1rem;">Ready to Get Started?</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Purchase AIAutomate today and get access to all homepage variations and future updates.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="pricing.html" class="btn btn-primary-gradient btn-lg">Purchase Now</a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <span class="brand-text">AI</span>Automate
+                    </div>
+                    <p class="footer-description">
+                        AI-powered automation platform to help businesses boost productivity, reduce costs, and scale faster.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Product</h5>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="api.html">API Reference</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Legal</h5>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 AIAutomate. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -8,11 +8,20 @@
    GLASSMORPHISM - CONSISTENT ACROSS ALL
    ======================================== */
 .glass-card {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
     border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .glass-navbar {
@@ -623,6 +632,107 @@ textarea.form-control {
     outline: none;
 }
 
+/* Form Validation States */
+.form-control.is-valid,
+.form-control-dark.is-valid {
+    border-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 20px;
+    padding-right: 3rem;
+}
+
+.form-control.is-valid:focus,
+.form-control-dark.is-valid:focus {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2), 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.form-control.is-invalid,
+.form-control-dark.is-invalid {
+    border-color: #ef4444;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='15' y1='9' x2='9' y2='15'%3E%3C/line%3E%3Cline x1='9' y1='9' x2='15' y2='15'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 20px;
+    padding-right: 3rem;
+}
+
+.form-control.is-invalid:focus,
+.form-control-dark.is-invalid:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2), 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.valid-feedback {
+    color: var(--success-color);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.invalid-feedback {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Form Input with Icon */
+.form-input-icon {
+    position: relative;
+}
+
+.form-input-icon .form-control,
+.form-input-icon .form-control-dark {
+    padding-left: 3rem;
+}
+
+.form-input-icon .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.form-input-icon .form-control:focus + .input-icon,
+.form-input-icon .form-control-dark:focus + .input-icon {
+    color: var(--primary-color);
+}
+
+/* Floating Label */
+.form-floating {
+    position: relative;
+}
+
+.form-floating .form-control,
+.form-floating .form-control-dark {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 0.875rem 1rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    color: var(--text-muted);
+}
+
+.form-floating .form-control:focus ~ label,
+.form-floating .form-control-dark:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label,
+.form-floating .form-control-dark:not(:placeholder-shown) ~ label {
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
 /* ========================================
    FOOTER
    ======================================== */
@@ -717,4 +827,179 @@ textarea.form-control {
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* ========================================
+   CARD VARIATIONS
+   ======================================== */
+
+/* Card Style 1 - Minimal */
+.card-minimal {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.card-minimal:hover {
+    background: var(--glass-bg);
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+/* Card Style 2 - Elevated */
+.card-elevated {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevated:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 30px 60px rgba(99, 102, 241, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Card Style 3 - Gradient Border */
+.card-gradient-border {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-gradient);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.card-gradient-border .card-content {
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* Card Style 4 - Image Top */
+.card-image-top {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.card-image-top:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card-image-top .card-image {
+    height: 200px;
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-top .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-image-top:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-image-top .card-body {
+    padding: 1.5rem;
+}
+
+/* Card Style 5 - Horizontal */
+.card-horizontal {
+    display: flex;
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.card-horizontal:hover {
+    transform: translateX(8px);
+    border-color: var(--primary-color);
+}
+
+.card-horizontal .card-image {
+    width: 40%;
+    min-height: 200px;
+    background: var(--bg-secondary);
+}
+
+.card-horizontal .card-body {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Card Style 6 - Stats */
+.card-stat {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+}
+
+.card-stat .stat-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--primary-gradient);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+}
+
+.card-stat .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.card-stat .stat-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
 }

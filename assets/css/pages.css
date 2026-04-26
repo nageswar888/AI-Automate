@@ -884,3 +884,98 @@
         padding: 60px 0;
     }
 }
+
+/* ========================================
+   VISUAL HIERARCHY - ALTERNATING SECTIONS
+   ======================================== */
+
+/* Section Background Variations */
+.section-dark {
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.section-gradient {
+    background: var(--bg-gradient);
+    position: relative;
+}
+
+.section-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.section-accent {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    position: relative;
+}
+
+.section-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.section-darker {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, #07070a 100%);
+}
+
+/* Section Rhythm Pattern */
+.section-rhythm-1 { background: var(--bg-primary); }
+.section-rhythm-2 { background: var(--bg-secondary); }
+.section-rhythm-3 { background: var(--bg-tertiary); }
+.section-rhythm-4 { 
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+}
+
+/* Enhanced Section Padding */
+.section-padding-lg {
+    padding: 140px 0;
+}
+
+.section-padding-xl {
+    padding: 160px 0;
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    margin: 0;
+}
+
+/* Animated Background Glow */
+.bg-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-glow::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    top: -300px;
+    right: -300px;
+    animation: float-glow 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float-glow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, 50px) scale(1.1); }
+}
