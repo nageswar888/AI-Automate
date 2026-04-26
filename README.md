@@ -21,16 +21,24 @@ ai-automate/
 ├── blog.html               # Blog - Featured post, article grid, pagination
 ├── contact.html            # Contact - Info cards, contact form, map, FAQ
 ├── login.html              # Login - Login form, social login
+├── api.html                # API Reference - Documentation, endpoints, code examples
+├── help.html               # Help Center - FAQs, tutorials, support resources
+├── community.html          # Community - User forums, discussions, events
+├── cookies.html            # Cookie Policy - Cookie usage information
+├── privacy.html            # Privacy Policy - Data privacy information
+├── security.html           # Security - Security features and compliance
+├── terms.html              # Terms of Service - Legal terms and conditions
 ├── assets/
 │   ├── css/
 │   │   └── styles.css      # Main stylesheet with 7 themes, glassmorphism
 │   ├── js/
 │   │   ├── theme.js        # Theme switcher (7 themes)
 │   │   └── main.js         # Interactions, animations, utilities
-│   ├── images/             # Image assets
+│   ├── images/             # Image assets (favicon.svg, og-image.svg)
 │   └── vendor/             # Third-party libraries (if local)
-├── partials/               # HTML partials for navbar, footer, etc.
+├── partials/               # HTML partials documentation
 │   └── README.md           # Partials documentation
+├── Dummy file              # Placeholder file
 └── README.md               # This documentation
 ```
 
@@ -41,16 +49,26 @@ ai-automate/
 - ✅ Professional file organization for easy customization
 
 ### JavaScript
-- ✅ `main.js` with comprehensive interactions
-  - Navbar scroll effects and mobile menu handling
-  - Scroll animations with Intersection Observer
-  - Counter animations
-  - Smooth scrolling
-  - Form validation with success messages
-  - Pricing toggle
-  - Back to top button
-  - Cursor effects (desktop)
-  - Notification system
+- ✅ `main.js` with comprehensive interactions (v2.0.0)
+  - **Navbar Module**: Scroll effects, mobile menu handling, custom toggler icons
+  - **Scroll Animations**: Intersection Observer based reveal animations
+  - **Counter Animation**: Animated number counting with configurable duration
+  - **Smooth Scroll**: Anchor link navigation with offset
+  - **Form Validation**: Client-side validation with success/error messages
+  - **Typing Animation**: Typewriter effect for text elements
+  - **Parallax Effect**: Scroll-based parallax for background elements
+  - **Pricing Toggle**: Monthly/Yearly pricing switcher
+  - **Lazy Loading**: Image lazy loading with Intersection Observer
+  - **Back to Top**: Floating button with smooth scroll to top
+  - **Custom Cursor**: Desktop-only cursor hover effects
+  - **Notification System**: Toast notifications with multiple types
+  - **Performance Monitoring**: Web Vitals support
+
+- ✅ `theme.js` with 7 theme variants
+  - Theme switcher with localStorage persistence
+  - Keyboard shortcut (Press 'T' to toggle)
+  - Theme change notifications
+  - Available themes: Dark, Light, Midnight Blue, Deep Purple, Ocean, Forest, Gradient Dark
 
 ### Design System
 - ✅ **Glassmorphism Effects**
@@ -229,13 +247,74 @@ ai-automate/
 
 ### 7. Login (`login.html`)
 **Features:**
-- Centered login card
+- Centered login card with glass effect
 - Logo with brand styling
-- Email/password inputs
+- Email/password inputs with validation
 - Remember me checkbox
 - Forgot password link
-- Social login buttons (Google, GitHub)
+- Social login buttons (Google, GitHub) - UI only
 - Sign up link
+
+### 8. API Reference (`api.html`)
+**Sections:**
+- **Hero**: API introduction and getting started
+- **Authentication**: API key usage instructions
+- **Endpoints**: 
+  - GET /workflows - List all workflows
+  - POST /workflows - Create workflow
+  - GET /tasks - List tasks
+  - POST /integrations - Connect integrations
+- **Code Examples**: Copyable code snippets
+- **Response Formats**: JSON response documentation
+
+### 9. Help Center (`help.html`)
+**Sections:**
+- **Hero**: Help center search
+- **Quick Links**: Popular help topics
+- **Getting Started**: Onboarding guides
+- **Tutorials**: Step-by-step video tutorials
+- **FAQs**: Common questions and answers
+- **Contact Support**: Support request form
+
+### 10. Community (`community.html`)
+**Sections:**
+- **Hero**: Community introduction
+- **Stats**: Active members, discussions, solutions
+- **Discussion Forums**: Category cards (General, Help, Show & Tell, API)
+- **Popular Topics**: Trending discussions
+- **Upcoming Events**: Webinars and meetups
+- **Join CTA**: Community signup prompt
+
+### 11. Cookie Policy (`cookies.html`)
+**Sections:**
+- Cookie usage explanation
+- Types of cookies used (Essential, Analytics, Marketing)
+- Cookie management instructions
+- Third-party cookie information
+
+### 12. Privacy Policy (`privacy.html`)
+**Sections:**
+- Data collection practices
+- Information usage
+- Data protection measures
+- User rights (GDPR compliance)
+- Contact information for privacy inquiries
+
+### 13. Security (`security.html`)
+**Sections:**
+- Security features overview
+- Encryption standards
+- Compliance certifications
+- Security best practices
+- Incident reporting
+
+### 14. Terms of Service (`terms.html`)
+**Sections:**
+- Service terms and conditions
+- User responsibilities
+- Account termination policy
+- Limitation of liability
+- Governing law
 
 ## 🎯 Key Features
 
@@ -331,14 +410,16 @@ All external resources loaded via CDN:
 
 ## 📝 To-Do / Enhancements
 
-- [ ] Add dark/light mode toggle
-- [ ] Implement actual form submission handling
+- [x] ~~Add dark/light mode toggle~~ (Completed - 7 theme variants available)
+- [x] ~~Add SEO meta tags for each page~~ (Completed - All 14 pages have SEO meta tags)
+- [ ] Implement actual form submission handling (backend integration)
 - [ ] Add blog post detail pages
 - [ ] Create 404 error page
 - [ ] Add loading states
 - [ ] Implement cookie consent banner
-- [ ] Add SEO meta tags for each page
 - [ ] Create sitemap.xml
+- [ ] Add RSS feed for blog
+- [ ] Implement search functionality
 
 ## 📄 License
 
@@ -347,6 +428,10 @@ This project is for educational/demonstration purposes.
 ## 👨‍💻 Author
 
 Built with modern web technologies.
+
+---
+
+**Last Updated**: April 2025
 
 ---
 
@@ -361,3 +446,10 @@ Built with modern web technologies.
 | [Blog](blog.html) | Articles and insights |
 | [Contact](contact.html) | Get in touch |
 | [Login](login.html) | User authentication |
+| [API](api.html) | API documentation and reference |
+| [Help](help.html) | Help center and FAQs |
+| [Community](community.html) | User community and forums |
+| [Cookies](cookies.html) | Cookie policy information |
+| [Privacy](privacy.html) | Privacy policy |
+| [Security](security.html) | Security information |
+| [Terms](terms.html) | Terms of service |
