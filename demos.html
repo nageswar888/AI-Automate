@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Previews - AIAutomate | Choose Your Template</title>
+    <meta name="description" content="Explore different demo variations of AIAutomate - AI SaaS, Agency, and Startup templates.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Base & Utilities -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <!-- Components -->
+    <link rel="stylesheet" href="assets/css/components/navbar.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/cards.css">
+    <link rel="stylesheet" href="assets/css/components/forms.css">
+    <!-- Page Specific -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    <style>
+        .demo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .demo-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+        .demo-preview {
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .demo-card:hover .demo-preview img {
+            transform: scale(1.05);
+        }
+        .demo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .demo-card:hover .demo-overlay {
+            opacity: 1;
+        }
+        .demo-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.375rem 0.875rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .demo-content {
+            padding: 1.5rem;
+        }
+        .demo-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .demo-description {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+        .demo-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        .demo-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+    </style>
+    <!-- Theme & Overrides -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">AI</span>Automate
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="theme-toggle-nav" aria-label="Toggle theme">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="login.html" class="btn btn-outline-light">Login</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a href="pricing.html" class="btn btn-primary-gradient">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demos Hero -->
+    <section class="hero-section" style="min-height: 60vh; padding-top: 120px;">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <div class="hero-badge">
+                    <span class="badge-icon">🎨</span>
+                    <span>Multiple Variations</span>
+                </div>
+                <h1 class="hero-title" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Choose Your <span class="gradient-text">Perfect Template</span>
+                </h1>
+                <p class="hero-subtitle" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Three unique demo variations designed for different business needs. 
+                    Each crafted with attention to detail and conversion optimization.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demos Grid -->
+    <section class="features-section" style="padding-top: 0;">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Demo 1: AI SaaS -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="demo-card">
+                        <div class="demo-preview">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a2e 0%, #252542 50%, #1a1a2e 100%); display: flex; align-items: center; justify-content: center;">
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: var(--primary-gradient); border-radius: 20px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                                        </svg>
+                                    </div>
+                                    <p style="color: var(--text-secondary); font-size: 1.25rem; font-weight: 600;">AI SaaS</p>
+                                </div>
+                            </div>
+                            <div class="demo-overlay">
+                                <a href="index.html" class="btn btn-primary-gradient">View Demo</a>
+                            </div>
+                        </div>
+                        <span class="demo-tag">Popular</span>
+                        <div class="demo-content">
+                            <h3 class="demo-title">AI SaaS Dashboard</h3>
+                            <p class="demo-description">
+                                Perfect for AI-powered SaaS platforms, analytics tools, and business intelligence dashboards.
+                            </p>
+                            <div class="demo-meta">
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                                    12 Pages
+                                </span>
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    Dark Mode
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 2: Agency -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="demo-card">
+                        <div class="demo-preview">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); display: flex; align-items: center; justify-content: center;">
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #06b6d4, #3b82f6); border-radius: 20px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                    </div>
+                                    <p style="color: var(--text-secondary); font-size: 1.25rem; font-weight: 600;">Agency</p>
+                                </div>
+                            </div>
+                            <div class="demo-overlay">
+                                <a href="index.html" class="btn btn-primary-gradient">View Demo</a>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <h3 class="demo-title">Creative Agency</h3>
+                            <p class="demo-description">
+                                Ideal for digital agencies, creative studios, and marketing firms showcasing their services.
+                            </p>
+                            <div class="demo-meta">
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                                    10 Pages
+                                </span>
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    Portfolio
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo 3: Startup -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="demo-card">
+                        <div class="demo-preview">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2e1065 0%, #4c1d95 50%, #2e1065 100%); display: flex; align-items: center; justify-content: center;">
+                                <div style="text-align: center;">
+                                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ec4899, #a855f7); border-radius: 20px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                                        </svg>
+                                    </div>
+                                    <p style="color: var(--text-secondary); font-size: 1.25rem; font-weight: 600;">Startup</p>
+                                </div>
+                            </div>
+                            <div class="demo-overlay">
+                                <a href="index.html" class="btn btn-primary-gradient">View Demo</a>
+                            </div>
+                        </div>
+                        <span class="demo-tag" style="background: linear-gradient(135deg, #ec4899, #a855f7);">New</span>
+                        <div class="demo-content">
+                            <h3 class="demo-title">Tech Startup</h3>
+                            <p class="demo-description">
+                                Designed for startups and tech companies looking to showcase their innovative products.
+                            </p>
+                            <div class="demo-meta">
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                                    14 Pages
+                                </span>
+                                <span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    Animations
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Comparison -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glass-card p-4" data-aos="fade-up">
+                        <h3 class="text-center mb-4">All Demos Include</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">Responsive Design</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">Dark/Light Mode</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">AOS Animations</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">Bootstrap 5</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">Chart.js Graphs</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div style="width: 50px; height: 50px; background: var(--glass-bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <p style="color: var(--text-secondary);">SEO Optimized</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="glass-card p-5 text-center" data-aos="zoom-in">
+                <h2 class="mb-3">Ready to Get Started?</h2>
+                <p class="mb-4" style="color: var(--text-secondary); max-width: 500px; margin-left: auto; margin-right: auto;">
+                    Purchase once, use forever. All future updates included with your license.
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="pricing.html" class="btn btn-primary-gradient btn-lg">Buy Now - $49</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Ask Question</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="brand-text">AI</span>Automate
+                    </a>
+                    <p class="footer-tagline">AI-powered automation for modern businesses</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AIAutomate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
