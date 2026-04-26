@@ -1,0 +1,184 @@
+/**
+ * AIAutomate - Base Styles
+ * Reset, CSS Variables, Typography
+ * Version: 2.0.0
+ */
+
+/* ========================================
+   CSS CUSTOM PROPERTIES
+   ======================================== */
+:root {
+    /* Colors - Dark Theme (Default) */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a2e;
+    --bg-card-hover: #252542;
+    --primary-color: #6366f1;
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --secondary-color: #06b6d4;
+    --accent-purple: #a855f7;
+    --accent-pink: #ec4899;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --glow-primary: 0 0 40px rgba(99, 102, 241, 0.3);
+    --glow-purple: 0 0 40px rgba(168, 85, 247, 0.3);
+    
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(20px);
+    
+    /* Spacing - Consistent 100px sections */
+    --section-padding: 100px;
+    --section-padding-sm: 60px;
+    --container-padding: 1rem;
+    
+    /* Border Radius - Consistent 16px */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease;
+    --transition-base: all 0.3s ease;
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 30px rgba(99, 102, 241, 0.2);
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   TYPOGRAPHY - IMPROVED HIERARCHY
+   ======================================== */
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+p.lead {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+p.small {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Text Utilities */
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: var(--text-primary);
+}

@@ -1,0 +1,215 @@
+/**
+ * AIAutomate - Main Stylesheet
+ * ThemeForest Ready - Modular CSS Architecture
+ * Version: 2.0.0
+ * 
+ * Import Order:
+ * 1. base.css - CSS variables, reset, typography
+ * 2. utilities.css - Helper classes, animations
+ * 3. layout.css - Grid, spacing, sections
+ * 4. components.css - Cards, buttons, navbar, forms
+ * 5. pages.css - Page-specific styles
+ */
+
+/* ========================================
+   NAVBAR THEME TOGGLE BUTTON
+   ======================================== */
+.theme-toggle-nav {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.theme-toggle-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.theme-toggle-nav svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ========================================
+   THEME SELECTOR STYLES
+   ======================================== */
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(99, 102, 241, 0.6);
+}
+
+.theme-toggle-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Theme Selector Panel */
+.theme-selector {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    width: 200px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1rem;
+    z-index: 9998;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-selector.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+}
+
+.theme-selector-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-option.active {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+.theme-color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.theme-option.active .theme-color-dot {
+    border-color: var(--text-primary);
+}
+
+.theme-color-dot.dark { background: #0a0a0f; }
+.theme-color-dot.light { background: #f8fafc; border: 1px solid rgba(0,0,0,0.1); }
+.theme-color-dot.midnight { background: #0f172a; }
+.theme-color-dot.purple { background: #2e1065; }
+.theme-color-dot.ocean { background: #0c4a6e; }
+.theme-color-dot.forest { background: #14532d; }
+.theme-color-dot.gradient-dark { background: linear-gradient(135deg, #1e1b4b, #312e81); }
+
+.theme-name {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.theme-option.active .theme-name {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   ADDITIONAL THEME COLOR DEFINITIONS
+   ======================================== */
+
+/* Theme: Midnight Blue */
+[data-theme="midnight"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #334155;
+    --bg-card-hover: #475569;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme: Deep Purple */
+[data-theme="purple"] {
+    --bg-primary: #2e1065;
+    --bg-secondary: #4c1d95;
+    --bg-card: #5b21b6;
+    --bg-card-hover: #6d28d9;
+    --text-primary: #faf5ff;
+    --text-secondary: #d8b4fe;
+    --text-muted: #a855f7;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme: Ocean */
+[data-theme="ocean"] {
+    --bg-primary: #0c4a6e;
+    --bg-secondary: #075985;
+    --bg-card: #0369a1;
+    --bg-card-hover: #0284c7;
+    --text-primary: #f0f9ff;
+    --text-secondary: #bae6fd;
+    --text-muted: #38bdf8;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme: Forest */
+[data-theme="forest"] {
+    --bg-primary: #14532d;
+    --bg-secondary: #166534;
+    --bg-card: #15803d;
+    --bg-card-hover: #16a34a;
+    --text-primary: #f0fdf4;
+    --text-secondary: #bbf7d0;
+    --text-muted: #4ade80;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme: Gradient Dark */
+[data-theme="gradient-dark"] {
+    --bg-primary: #1e1b4b;
+    --bg-secondary: #312e81;
+    --bg-card: #4338ca;
+    --bg-card-hover: #4f46e5;
+    --text-primary: #eef2ff;
+    --text-secondary: #c7d2fe;
+    --text-muted: #818cf8;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
